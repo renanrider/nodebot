@@ -1,7 +1,7 @@
 
 //toda vez que mudar a porta no script.js tem
 // que mudar aqui tambem
-var socket = io.connect('http://localhost:8083');
+var socket = io.connect('http://localhost:3005');
 
 socket.on('port', function (data) {
     console.log(data.port);

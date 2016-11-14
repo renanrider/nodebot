@@ -5,8 +5,6 @@ var  five    = require("johnny-five")
 , led
 , sensor
 , board;
-require('events').EventEmitter.prototype._maxListeners = 10;
-
 //,keypress = require("/opt/node_modules/keypress")
 // Johnny-Five irá tentar localizar a porta onde o Arduino está
 // mas também você pode especificar a porta, e também se estiver
@@ -56,7 +54,7 @@ var   express = require('express')
 , app = require('express')()
 , server = require('http').Server(app)
 , io = require('socket.io')(server)
-, port    = process.env.PORT || 8083;  
+, port    = process.env.PORT || 3005;  
 
 app.use(express.static(__dirname + '/public'));
 server.listen(port);
