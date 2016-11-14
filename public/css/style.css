@@ -1,0 +1,45 @@
+h1 {
+    font-size: 1.8em;
+    text-align: center;
+}
+
+.text-area {
+    background-color: black;
+    color: lime;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#exibe {
+    font-size: 1.8em;
+    color: #000;
+}
+
+input[type=range] {
+    margin-top: 10px;
+    -webkit-appearance: none;
+    background-color: #ccc;
+    width: 100%;
+    height: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin-top: -12px;
+    width: 10px;
+    height: 30px;
+}
+
+/* Botoes */
+#forward { margin-left: 39%; }
+#left { margin-left: 45.6939%; }
+#right { margin-left: 9%; }
+#back { margin-left: 39%; }
+
+
+@media screen and (max-width: 480px) {
+
+#controles { margin-top: 20px; }
+#left { margin-left: 24.6939%; }
+#right { margin-left: 25%; }
+}

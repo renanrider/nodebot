@@ -1,0 +1,82 @@
+<html>
+<head>
+	<title>Johnny-five Control Fatec</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--Import materialize.css-->
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+	<div class="row">
+		<div class="col s12 l9 offset-l1 ">	
+			<h1>NodeBot FATEC V.0.1</h1>
+
+			<div class="row">
+				<div class="col s12 l6 offset-l3">
+
+					<div class="col s12 l12">
+						<button class="btn btn-primary" id="forward"><i class="fa fa-arrow-up fa-5x" aria-hidden="true"></i></button>
+					</div>
+
+
+					<div class="col s6 l6">
+						<button class="btn btn-primary" id="left"><i class="fa fa-arrow-left fa-5x" aria-hidden="true"></i></button>
+					</div>
+
+
+					<div class="col s6 l6">
+						<button class="btn btn-primary" id="right"><i class="fa fa-arrow-right fa-5x" aria-hidden="true"></i></button>
+					</div>
+
+					<div class="col s12 l12">
+						<button class="btn btn-primary" id="back"><i class="fa fa-arrow-down fa-5x" aria-hidden="true"></i></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+			<div class="col s6 l5 offset-l5">
+					<button id="stop" class="btn btn-primary"><i class="fa fa-stop-circle fa-5x" aria-hidden="true"></i></button>
+					<button id="luz" class="btn btn-primary"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></button>   
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- linha -->
+
+	<div class="row">
+		<div class="col s12 l6 offset-l3">
+			<label>Sensor de Luminosidade:</label>
+			<textarea id="inData" class="form-control text-area" rows="2" id="inData">Desconect</textarea>
+			<label>Sensor de Distancia:</label>
+			<textarea id="inData2" class="form-control text-area" rows="2" id="inData2">Desconect</textarea>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s12 l6 offset-l3">
+			<input type="range" min="150" max="255">
+		</div>
+		<div class="col s2 l2">
+			<div id="exibe">150</div>
+		</div>
+
+	</div>
+
+
+
+	<script type="text/javascript" src="js/libs/jquery.min.js"></script> 
+	<script type="text/javascript" src="js/libs/materialize.min.js"></script>  
+	<script type="text/javascript" src="js/libs/socket.io-1.3.2.js"></script>
+	<script src="js/script-front-end.js"></script>
+        <!--or Additionally, Socket.IO servers automatically serve the client for your convenience:
+        <script src="http://your-io-server/socket.io/socket.io.js">-->
+        </body>
+        </html>
+

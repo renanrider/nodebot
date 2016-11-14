@@ -1,0 +1,17 @@
+{
+  "name": "nodebot-fatec",
+  "version": "1.0.0",
+  "description": "Introdução a robótica utilzando NodeJS",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alunos Fatec Carapicuíba",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "johnny-five": "0.8.84",
+    "serialport": "^4.0.6",
+    "socket.io": "^1.5.1"
+  }
+}
