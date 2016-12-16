@@ -37,7 +37,7 @@ npm start
 E em seguida abra o navegador e acesse:
 
 ```
-http://localhost:3000
+http://localhost:3003
 ```
 
 Que o servidor estará funcionando.
