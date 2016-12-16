@@ -1,7 +1,7 @@
 
 //toda vez que mudar a porta no script.js tem
 // que mudar aqui tambem
-var socket = io.connect('http://localhost:3005');
+var socket = io.connect('http://localhost:3003');
 
 socket.on('port', function (data) {
     console.log(data.port);
@@ -12,6 +12,7 @@ socket.on('sensor', function (data) {
     console.log("Entrada de dados do sensor:", data.raw);
     $("#inData").append(data.raw + "\r");
     $("#inData").animate({scrollTop: $("#inData")[0].scrollHeight - $("#inData").height()}, 200);
+    updateLdr(data.raw);
 });
 
 //recebe os dados recebidos pela sensor ultrasonico e envia para o browser exibir em um <textarea>
@@ -19,14 +20,15 @@ socket.on('ping', function (data) {
     console.log("Entrada de dados do ping:", data.raw);
     $("#inData2").append(data.raw + "\r");
     $("#inData2").animate({scrollTop: $("#inData2")[0].scrollHeight - $("#inData2").height()}, 200);
+    updatePing(data.raw);
 });
 
 //reset nos valores, para evitar lentidão no elemento
-  setInterval(function() {
+setInterval(function() {
    $("#inData").empty(); 
    $("#inData2").empty(); 
    window.console.log("Reset");
-}, 10000);  
+}, 20000);  
 
 //recebe os dados enviados pelo <button> do browser e envia para o script.js que esta rodando no  node.js
 $('#vel').change(function () {
@@ -68,7 +70,54 @@ $('#right').on('mousedown', function () {
 });
 
 $('.mouseup').mouseup(function () {
-
     console.log("mouseup:", 6);
     socket.emit('mouseup', 6);
 });
+
+
+var canvas = document.getElementById('chart'),
+ctx = canvas.getContext('2d');
+initData = {
+  datasets: [
+  {
+      label: "Sensor Luminosidade",
+      backgroundColor: "yellow",
+      borderColor: 2,
+      borderWidth: 1,
+      data: [0, 10],      
+  },
+  {
+      label: "Sensor Distância",
+      backgroundColor: "blue",
+      borderColor: 2,
+      borderWidth: 1,
+      data: [0, 10]
+  }
+  ],
+
+};
+
+// Reduce the animation steps for demo clarity.
+var chart = new Chart(ctx, {
+    type: "bar",
+    data: initData,
+    numSteps: 10
+});
+
+var updateLdr = function(value) {
+    // Update one of the points in the second dataset
+    chart.data.datasets[0].data[0] = value;
+}
+
+var updatePing = function(value) {
+    // Update one of the points in the first dataset
+    chart.data.datasets[1].data[0] = value;
+
+}
+
+setInterval(function(){
+    chart.update();
+}, 1000);
+
+
+

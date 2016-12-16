@@ -44,7 +44,7 @@ this.repl.inject({
 	led:led
 });
 console.log("Repl instance auto-initialized ready!!!");
-console.log("Robo ok!");
+console.log("Robo: Estou pronto!");
 });
 
 /*===================================================================================
@@ -54,7 +54,7 @@ var   express = require('express')
 , app = require('express')()
 , server = require('http').Server(app)
 , io = require('socket.io')(server)
-, port    = process.env.PORT || 3005;  
+, port    = process.env.PORT || 3003;  
 
 app.use(express.static(__dirname + '/public'));
 server.listen(port);
