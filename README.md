@@ -1,6 +1,6 @@
-#NodeBot
+# NodeBot
 
-##Libs
+## Libs
 
 http://johnny-five.io/
 http://socket.io/

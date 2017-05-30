@@ -4,7 +4,7 @@
   "description": "Introdução a robótica utilzando NodeJS",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node script.js"
   },
   "author": "Alunos Fatec Carapicuíba",
   "license": "ISC",
