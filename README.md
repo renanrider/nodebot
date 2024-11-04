@@ -11,8 +11,6 @@
 https://nodejs.org/en/
 
 <br>
-[Link em do robo funcionando](https://www.youtube.com/watch?v=ps-6U2mv5JY)
-
 
 Para testar esse projeto, abra o terminal no caso usuários do Linux e clone o repositório com o comando:
 
